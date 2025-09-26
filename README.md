@@ -1,19 +1,61 @@
-# 🪔 Dashain Festival 2081 - Next.js Website
+# 🪔 Dashain Festival Website
 
-A beautifully crafted, production-ready Next.js website celebrating Dashain, Nepal's greatest festival of victory and family reunion.
+A beautiful, modern website celebrating Dashain - Nepal's greatest festival of victory and family reunion. Built with Next.js, TypeScript, and featuring a clean, organized codebase structure.
 
-## ✨ Features
+## 🎯 Features
 
-- **Modern Next.js Architecture**: Built with Next.js 14, React 18, and TypeScript
-- **Stunning Animations**: Smooth animations using Framer Motion
-- **Responsive Design**: Mobile-first design that works on all devices
-- **SEO Optimized**: Complete SEO setup with meta tags, Open Graph, and structured data
-- **Performance Optimized**: Image optimization, lazy loading, and bundle analysis
-- **Production Ready**: Full production build configuration and deployment scripts
-- **Progressive Web App**: PWA manifest and service worker ready
-- **Accessibility**: WCAG compliant with proper semantic markup
+- **Modern Next.js Architecture**: Built with Next.js 14, TypeScript, and modern React patterns
+- **Organized Code Structure**: Clean `src/` folder organization with proper separation of concerns
+- **SEO Optimized**: Complete meta tags, OpenGraph, Twitter Cards, and JSON-LD structured data
+- **Performance Focused**: Optimized images, code splitting, and fast loading times
+- **Mobile Responsive**: Fully responsive design that works on all devices
+- **Rich Animations**: Beautiful floating animations and smooth transitions
+- **Cultural Authenticity**: Accurate representation of Dashain traditions and significance
 
-## 🚀 Quick Start
+## 📁 Project Structure
+
+```
+DashainWebsite/
+├── src/
+│   ├── components/          # React components
+│   │   ├── About.tsx
+│   │   ├── Footer.tsx
+│   │   ├── Gallery.tsx
+│   │   ├── Header.tsx
+│   │   ├── Hero.tsx
+│   │   ├── Layout.tsx
+│   │   ├── Traditions.tsx
+│   │   └── Wishes.tsx
+│   ├── hooks/               # Custom React hooks
+│   │   ├── index.ts
+│   │   ├── useLocalStorage.ts
+│   │   └── useScrollPosition.ts
+│   ├── lib/                 # Utility libraries
+│   │   ├── constants.ts
+│   │   └── utils.ts
+│   ├── pages/               # Next.js pages
+│   │   ├── _app.tsx
+│   │   ├── _document.tsx
+│   │   └── index.tsx
+│   ├── styles/              # CSS styles
+│   │   ├── Footer.module.css
+│   │   ├── globals.css
+│   │   ├── Header.module.css
+│   │   ├── Hero.module.css
+│   │   └── Sections.module.css
+│   └── types/               # TypeScript type definitions
+│       └── index.ts
+├── public/                  # Static assets
+│   ├── images/
+│   ├── robots.txt
+│   └── site.webmanifest
+├── next.config.js          # Next.js configuration
+├── tsconfig.json           # TypeScript configuration
+├── package.json            # Dependencies and scripts
+└── vercel.json             # Vercel deployment config
+```
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
@@ -37,13 +79,7 @@ A beautifully crafted, production-ready Next.js website celebrating Dashain, Nep
    pnpm install
    ```
 
-3. **Set up environment variables**
-   ```bash
-   cp env.example .env.local
-   # Edit .env.local with your actual values
-   ```
-
-4. **Run the development server**
+3. **Start the development server**
    ```bash
    npm run dev
    # or
@@ -52,147 +88,93 @@ A beautifully crafted, production-ready Next.js website celebrating Dashain, Nep
    pnpm dev
    ```
 
-5. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000) to see the website.
 
-## 📁 Project Structure
+## 📝 Available Scripts
 
-```
-DashainWebsite/
-├── components/           # React components
-│   ├── Header.tsx       # Navigation header
-│   ├── Hero.tsx         # Hero section with animations
-│   ├── About.tsx        # About Dashain section
-│   ├── Traditions.tsx   # Sacred traditions
-│   ├── Gallery.tsx      # Photo gallery
-│   ├── Wishes.tsx       # Blessing section
-│   ├── Footer.tsx       # Footer component
-│   └── Layout.tsx       # Main layout wrapper
-├── pages/               # Next.js pages
-│   ├── _app.tsx         # App component
-│   ├── _document.tsx    # Document component
-│   └── index.tsx        # Homepage
-├── styles/              # CSS modules
-│   ├── globals.css      # Global styles
-│   ├── Header.module.css
-│   ├── Hero.module.css
-│   ├── Sections.module.css
-│   └── Footer.module.css
-├── public/              # Static assets
-│   ├── images/          # Festival photos
-│   ├── site.webmanifest # PWA manifest
-│   └── robots.txt       # SEO robots file
-├── hooks/               # Custom React hooks
-├── utils/               # Utility functions
-├── next.config.js       # Next.js configuration
-├── tsconfig.json        # TypeScript configuration
-└── package.json         # Dependencies and scripts
-```
-
-## 🛠️ Available Scripts
-
-### Development
 - `npm run dev` - Start development server
-- `npm run lint` - Run ESLint
-- `npm run type-check` - Run TypeScript type checking
-
-### Production
 - `npm run build` - Build for production
 - `npm run start` - Start production server
-- `npm run export` - Export static site
+- `npm run lint` - Run ESLint
+- `npm run export` - Generate static export
 - `npm run analyze` - Analyze bundle size
-
-## 🎨 Customization
-
-### Colors and Theming
-Edit CSS variables in `styles/globals.css`:
-```css
-:root {
-  --primary-red: #DC143C;
-  --secondary-gold: #FFD700;
-  --accent-orange: #FF6B35;
-  /* ... more colors */
-}
-```
-
-### Content Updates
-- **Hero Section**: Edit `components/Hero.tsx`
-- **About Content**: Edit `components/About.tsx`
-- **Traditions**: Edit `components/Traditions.tsx`
-- **Gallery Images**: Add images to `public/images/`
-
-### SEO Configuration
-Update meta tags in `components/Layout.tsx` and `pages/_document.tsx`
-
-## 📱 Progressive Web App
-
-The site includes PWA features:
-- Web app manifest (`public/site.webmanifest`)
-- Offline capabilities (add service worker)
-- Install prompt support
 
 ## 🌐 Deployment
 
 ### Vercel (Recommended)
-1. Connect your GitHub repository to Vercel
-2. Configure environment variables
-3. Deploy automatically on push
 
-### Netlify
-1. Connect repository to Netlify
-2. Build command: `npm run build`
-3. Publish directory: `.next`
+1. **Via Vercel Dashboard (Browser)**
+   - Go to [vercel.com](https://vercel.com)
+   - Click "New Project"
+   - Import your Git repository
+   - Vercel will automatically detect Next.js and deploy
 
-### Traditional Hosting
-1. Run `npm run build`
-2. Run `npm run export` for static export
-3. Upload the `out` folder to your hosting provider
+2. **Via Vercel CLI**
+   ```bash
+   npm i -g vercel
+   vercel
+   ```
 
-## 📊 Performance
+### Other Platforms
 
-The website is optimized for:
-- **Core Web Vitals**: Excellent scores on LCP, FID, and CLS
-- **Lighthouse Score**: 95+ on all metrics
-- **Bundle Size**: Optimized with automatic code splitting
-- **Image Optimization**: Next.js automatic image optimization
+- **Netlify**: Deploy the `out/` folder after running `npm run export`
+- **GitHub Pages**: Use static export with `npm run export`
+- **Any Static Host**: Use `npm run export` and upload the `out/` folder
 
-## 🔧 Technical Stack
+## 🎨 Customization
 
-- **Framework**: Next.js 14
-- **Language**: TypeScript
-- **Styling**: CSS Modules
-- **Animations**: Framer Motion
-- **SEO**: next-seo
-- **Fonts**: Google Fonts (Poppins)
-- **Icons**: Unicode emoji and symbols
+### Adding New Components
 
-## 🌟 Features in Detail
+1. Create your component in `src/components/`
+2. Export it from the component file
+3. Import and use in your pages
 
-### Animations
-- Smooth scroll animations using Framer Motion
-- Interactive photo gallery with hover effects
-- Floating elements background animation
-- Typewriter effect for blessing text
+### Adding Styles
 
-### SEO Optimization
-- Dynamic meta tags for each page
-- Open Graph and Twitter Card support
-- JSON-LD structured data
-- Sitemap generation ready
-- robots.txt configured
+- Use CSS Modules (`.module.css`) for component-specific styles
+- Add global styles to `src/styles/globals.css`
+- Follow the existing naming conventions
 
-### Performance Features
-- Image optimization with Next.js Image component
-- Lazy loading for all images
-- CSS optimization and minification
-- Bundle analysis tools included
+### Adding Utilities
 
-## 🔒 Security
+- Add utility functions to `src/lib/utils.ts`
+- Add constants to `src/lib/constants.ts`
+- Create custom hooks in `src/hooks/`
 
-- Content Security Policy headers
-- XSS protection
-- CSRF protection
-- Secure headers configuration
+### Type Definitions
+
+- Add TypeScript types to `src/types/index.ts`
+- Use proper typing for all components and functions
+
+## 🛠️ Technologies Used
+
+- **Next.js 14** - React framework with SSR/SSG
+- **TypeScript** - Type-safe JavaScript
+- **React 18** - Modern React with hooks
+- **CSS Modules** - Scoped CSS styling
+- **Framer Motion** - Animation library
+- **Next SEO** - SEO optimization
+- **ESLint** - Code linting
+- **Vercel** - Deployment platform
+
+## 📱 SEO & Performance
+
+- ✅ Meta tags and OpenGraph data
+- ✅ Structured data (JSON-LD)
+- ✅ Responsive images with optimization
+- ✅ Performance optimizations
+- ✅ Accessibility features
+- ✅ Fast loading times
+
+## 🎯 Cultural Significance
+
+This website celebrates Dashain, the most important festival in Nepal:
+
+- **10-day Festival**: From Ghatasthapana to Vijaya Dashami
+- **Victory Celebration**: Commemorates the victory of good over evil
+- **Family Reunion**: Brings families together from across the world
+- **Cultural Heritage**: Preserves and shares Nepalese traditions
 
 ## 🤝 Contributing
 
@@ -208,19 +190,12 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 🙏 Acknowledgments
 
-- Traditional Nepalese festival imagery
-- Community contributions and feedback
-- Open source libraries and tools used
-
-## 📞 Support
-
-For support and questions:
-- Create an issue on GitHub
-- Check the documentation
-- Review the FAQ section
+- Traditional Dashain imagery and cultural information
+- Nepal's rich cultural heritage
+- The global Nepalese community
 
 ---
 
-**🪔 शुभ दशैं! Happy Dashain! 🌼**
+**शुभ दशैं! 🪔🌼**
 
-Made with ❤️ for celebrating Nepal's rich cultural heritage.
+*May this Dashain bring joy, prosperity, and victory to all!*
