@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://your-domain.com/sitemap.xml
+
+# Crawl-delay for specific bots (optional)
+User-agent: Googlebot
+Crawl-delay: 1
+
+# Block access to admin or private areas (if any)
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all images to be crawled
+User-agent: *
+Allow: /images/

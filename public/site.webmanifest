@@ -1,0 +1,25 @@
+{
+  "name": "Dashain Festival 2081",
+  "short_name": "Dashain 2081",
+  "description": "Nepal's Greatest Festival of Victory and Family Reunion",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#DC143C",
+  "theme_color": "#DC143C",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["culture", "festival", "nepal"],
+  "lang": "en",
+  "dir": "ltr",
+  "orientation": "portrait-primary"
+}

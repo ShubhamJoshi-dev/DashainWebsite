@@ -1,0 +1,377 @@
+/* Section Styles */
+.section {
+  padding: 80px 0;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.sectionTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-red);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.titleUnderline {
+  width: 100px;
+  height: 4px;
+  background: var(--gradient-secondary);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* About Section */
+.about {
+  background: var(--cream);
+}
+
+.aboutContent {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.aboutDescription {
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--dark-brown);
+  line-height: 1.8;
+}
+
+.festivalFacts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.factItem {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  animation: slideInUp 0.8s ease-out;
+}
+
+.factItem:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.factIcon {
+  font-size: 3rem;
+  margin-right: 1.5rem;
+}
+
+.factContent h3 {
+  font-size: 1.3rem;
+  color: var(--primary-red);
+  margin-bottom: 0.5rem;
+}
+
+.factContent p {
+  color: var(--dark-brown);
+}
+
+/* Traditions Section */
+.traditions {
+  background: white;
+}
+
+.traditionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.traditionCard {
+  background: var(--gradient-primary);
+  color: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.8s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.traditionCard::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.traditionCard:hover::before {
+  opacity: 1;
+}
+
+.traditionCard:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.traditionIcon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.traditionCard h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--secondary-gold);
+}
+
+.traditionCard p {
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Gallery Section */
+.gallery {
+  background: var(--cream);
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Special layout for desktop to create a beautiful arrangement */
+@media (min-width: 1200px) {
+  .galleryGrid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+  }
+  
+  .galleryItem:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  
+  .galleryItem:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .galleryItem:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  
+  .galleryItem:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+  
+  .galleryItem:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+  
+  .galleryItem:nth-child(6) {
+    animation-delay: 0.6s;
+  }
+  
+  .galleryItem:nth-child(7) {
+    animation-delay: 0.7s;
+  }
+}
+
+.galleryItem {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  animation: zoomIn 0.8s ease-out;
+}
+
+.galleryItem:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.galleryImage {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.galleryItem:hover .galleryImage {
+  transform: scale(1.1);
+}
+
+.galleryOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(220, 20, 60, 0.8), rgba(255, 107, 53, 0.8));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.galleryItem:hover .galleryOverlay {
+  opacity: 1;
+}
+
+.galleryText {
+  text-align: center;
+  color: white;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.galleryItem:hover .galleryText {
+  transform: translateY(0);
+}
+
+.galleryText h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.traditionVisual {
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.visualContent {
+  text-align: center;
+  color: white;
+}
+
+.tikaPattern {
+  width: 80px;
+  height: 80px;
+  background: var(--secondary-gold);
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  position: relative;
+  animation: pulse 2s infinite;
+}
+
+.tikaPattern::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: var(--deep-red);
+  border-radius: 50%;
+}
+
+.jamaraVisual {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: sway 3s ease-in-out infinite;
+}
+
+.visualContent h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--secondary-gold);
+}
+
+/* Wishes Section */
+.wishes {
+  background: var(--gradient-primary);
+  color: white;
+  text-align: center;
+}
+
+.wishesContent {
+  animation: fadeIn 1s ease-out;
+}
+
+.wishesTitle {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.wishesText {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+.blessingText {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--secondary-gold);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .aboutDescription {
+    font-size: 1.1rem;
+  }
+  
+  .wishesTitle {
+    font-size: 2rem;
+  }
+  
+  .wishesText {
+    font-size: 1.1rem;
+  }
+  
+  .blessingText {
+    font-size: 1.2rem;
+  }
+  
+  .galleryGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .traditionsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .festivalFacts {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 60px 0;
+  }
+  
+  .traditionCard {
+    padding: 2rem;
+  }
+  
+  .factItem {
+    padding: 1.5rem;
+  }
+}

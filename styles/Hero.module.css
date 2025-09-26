@@ -1,0 +1,351 @@
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-hero);
+  overflow: hidden;
+}
+
+.heroBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 60%, rgba(220, 20, 60, 0.1) 0%, transparent 50%);
+}
+
+.floatingElements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.flower, .diyo {
+  position: absolute;
+  font-size: 2rem;
+  animation: float 6s ease-in-out infinite;
+}
+
+.flower1 {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.flower2 {
+  top: 60%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.flower3 {
+  top: 30%;
+  right: 25%;
+  animation-delay: 4s;
+}
+
+.diyo1 {
+  top: 70%;
+  left: 20%;
+  animation-delay: 1s;
+}
+
+.diyo2 {
+  top: 15%;
+  right: 35%;
+  animation-delay: 3s;
+}
+
+/* Hero Photos Styling */
+.heroPhotos {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.heroPhoto {
+  position: absolute;
+  width: 200px;
+  height: 250px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(255, 215, 0, 0.4);
+  animation: heroPhotoFloat 8s ease-in-out infinite;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.heroPhoto1 {
+  top: 15%;
+  left: 8%;
+  animation-delay: 0s;
+  transform: rotate(-15deg);
+  --rotation: -15deg;
+}
+
+.heroPhoto2 {
+  bottom: 20%;
+  right: 10%;
+  animation-delay: 4s;
+  transform: rotate(12deg);
+  --rotation: 12deg;
+}
+
+.heroPhoto3 {
+  top: 60%;
+  left: 15%;
+  animation-delay: 2s;
+  transform: rotate(-8deg);
+  width: 180px;
+  height: 220px;
+  --rotation: -8deg;
+}
+
+.heroPhoto4 {
+  top: 25%;
+  right: 25%;
+  animation-delay: 6s;
+  transform: rotate(18deg);
+  width: 180px;
+  height: 220px;
+  --rotation: 18deg;
+}
+
+.heroPhoto5 {
+  bottom: 35%;
+  left: 25%;
+  animation-delay: 8s;
+  transform: rotate(-20deg);
+  width: 160px;
+  height: 200px;
+  --rotation: -20deg;
+}
+
+.heroImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  border-radius: 15px;
+}
+
+.photoFrame {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 4px solid var(--secondary-gold);
+  border-radius: 25px;
+  background: linear-gradient(45deg, 
+    rgba(255, 215, 0, 0.2) 0%, 
+    rgba(220, 20, 60, 0.2) 50%, 
+    rgba(255, 107, 53, 0.2) 100%);
+  animation: frameGlow 3s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+/* Add subtle backdrop blur effect behind photos */
+.heroPhoto::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, 
+    rgba(255, 215, 0, 0.1) 0%, 
+    rgba(220, 20, 60, 0.1) 50%, 
+    transparent 70%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: -2;
+  animation: backdropPulse 4s ease-in-out infinite;
+}
+
+/* Add sparkle effects around photos */
+.heroPhoto::after {
+  content: '✨';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 1.5rem;
+  animation: sparkle 2s ease-in-out infinite;
+  z-index: 10;
+}
+
+.heroPhoto2::after {
+  content: '🌟';
+  top: -25px;
+  left: -25px;
+  animation-delay: 1s;
+}
+
+.heroContent {
+  text-align: center;
+  color: white;
+  z-index: 2;
+  animation: fadeInUp 1s ease-out;
+}
+
+.heroTitle {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.titleLine {
+  display: block;
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.titleLine:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.titleLineEn {
+  display: block;
+  font-size: 2.5rem;
+  color: var(--secondary-gold);
+  animation-delay: 0.4s;
+}
+
+.heroSubtitle {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  animation: fadeIn 1s ease-out 0.6s both;
+}
+
+.heroDate {
+  margin-bottom: 2rem;
+  animation: fadeIn 1s ease-out 0.8s both;
+}
+
+.dateText {
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  border: 2px solid rgba(255, 215, 0, 0.5);
+}
+
+.ctaButton {
+  background: var(--gradient-secondary);
+  color: var(--deep-red);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: fadeIn 1s ease-out 1s both;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+}
+
+.scrollArrow {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 20px solid white;
+  opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  
+  .titleLineEn {
+    font-size: 1.8rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.1rem;
+  }
+  
+  /* Hero Photos Responsive */
+  .heroPhoto {
+    width: 100px;
+    height: 120px;
+  }
+  
+  .heroPhoto1 {
+    top: 8%;
+    left: 3%;
+  }
+  
+  .heroPhoto2 {
+    bottom: 12%;
+    right: 3%;
+  }
+  
+  .heroPhoto3 {
+    top: 45%;
+    left: 8%;
+    width: 90px;
+    height: 110px;
+  }
+  
+  .heroPhoto4 {
+    top: 20%;
+    right: 20%;
+    width: 90px;
+    height: 110px;
+  }
+  
+  .heroPhoto5 {
+    bottom: 30%;
+    left: 20%;
+    width: 85px;
+    height: 105px;
+  }
+  
+  .heroPhoto::after {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+  
+  .titleLineEn {
+    font-size: 1.5rem;
+  }
+}
